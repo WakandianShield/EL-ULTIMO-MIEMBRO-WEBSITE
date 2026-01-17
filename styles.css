@@ -434,6 +434,13 @@ footer {
 
     /* ===== MAIN ===== */
 
+    .body {
+        background-image: url(MEDIA_EUM/fondoblur.png);
+        background-size: cover;
+        background-attachment: fixed;
+
+    }
+
     .main {
         padding: 90px 16px 40px;
     }
