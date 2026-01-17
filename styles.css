@@ -12,7 +12,7 @@
 }
 
 body {
-    background-image: url('/MEDIA_EUM/fondoblur.png');
+    background-image: url('MEDIA_EUM/fondoblur.png');
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
