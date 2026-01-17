@@ -13,7 +13,7 @@
 
 body {
     background-image: url('MEDIA_EUM/fondoblur.png');
-    background-size: cover;
+    background-size: auto;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,14 +21,15 @@ body {
     padding: 0;
     overflow-x: hidden;
     color: var(--text-light);
+    min-height: 100vh;
 }
 
 /* En dispositivos móviles, usa scroll en lugar de fixed */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
-        background-size: cover;
-        background-position: center;
+        background-size: 100% auto;
+        background-position: top center;
     }
 }
 
