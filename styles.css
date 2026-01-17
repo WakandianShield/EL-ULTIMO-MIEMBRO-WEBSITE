@@ -19,7 +19,6 @@ body {
     padding: 0;
     overflow-x: hidden;
     color: var(--text-light);
-    cursor: url('cursor.png'), auto;
 }
 
 /* ===== MAIN ===== */
@@ -584,7 +583,7 @@ footer {
 }
 
 .about-hero {
-    background-image: url('/MEDIA_EUM/fondoblur.png');
+    background-image: url('MEDIA_EUM/fondoblur.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -704,7 +703,7 @@ h2 {
   margin: 5vw 2vw;
   border-radius: 30px;
   overflow: hidden;
-  background-image: url('/MEDIA_EUM/YO.png');
+  background-image: url('MEDIA_EUM/YO.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
