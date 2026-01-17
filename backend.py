@@ -18,12 +18,4 @@ def get_connection():
 
 @app.route("/")
 def home():
-    return "Backend conectado a MySQL 🚀"
-
-# Servir archivos de media
-@app.route("/MEDIA_EUM/<path:filename>")
-def serve_media(filename):
-    return send_from_directory("MEDIA_EUM", filename)
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    return "el pepe"
