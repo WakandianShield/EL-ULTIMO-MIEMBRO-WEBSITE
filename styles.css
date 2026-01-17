@@ -21,6 +21,13 @@ body {
     color: var(--text-light);
 }
 
+/* En dispositivos móviles, usa scroll en lugar de fixed */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
 /* ===== MAIN ===== */
 
 .main {
