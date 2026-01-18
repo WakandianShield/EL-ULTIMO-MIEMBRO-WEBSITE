@@ -33,7 +33,6 @@ body::before {
     z-index: -1;
 }
 
-/* ===== MAIN ===== */
 
 .main {
     width: 100vw;
@@ -64,7 +63,6 @@ body::before {
     to   { text-shadow: 0 0 25px #ff5722; }
 }
 
-/* ===== CONTENEDORES ===== */
 
 .menu {
     display: flex;
@@ -87,7 +85,6 @@ body::before {
     margin: auto;
 }
 
-/* ===== TITULOS ===== */
 
 .characters-title,
 .lore-title,
@@ -99,7 +96,6 @@ body::before {
     text-shadow: 4px 4px 6px rgb(206, 117, 0);
 }
 
-/* ===== TEXTO ===== */
 
 p,
 .lore {
@@ -109,8 +105,6 @@ p,
     font-weight: bold;
     line-height: 1.6;
 }
-
-/* ===== LISTA ===== */
 
 ul {
     list-style: none;
@@ -130,7 +124,6 @@ ul {
     transform: translateX(6px);
 }
 
-/* ===== FAQ ===== */
 
 summary {
     font-family: 'Minecraft', sans-serif;
@@ -145,8 +138,6 @@ details p {
     font-size: 1.1em;
 }
 
-/* ===== VIDEO ===== */
-
 video,
 iframe {
     width: 95vw;
@@ -156,9 +147,6 @@ iframe {
     border-radius: 20px;
     box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-
-/* ===== BOTÓN ===== */
 
 .btn-comprar {
     display: inline-block;
@@ -183,7 +171,6 @@ iframe {
     transform: scale(0.95);
 }
 
-/* ===== NAV BAR ===== */
 
 .nav-bar {
     position: fixed;
@@ -203,15 +190,13 @@ iframe {
     z-index: 1000;
 }
 
-/* LOGO */
-
 .logo-nav {
     height: 65px;
     width: auto;
     display: block;
 }
 
-/* ===== BOTÓN HAMBURGUESA ===== */
+/*BOTON DE HAMBURGUESA*/
 
 .menu-toggle {
     width: 34px;
@@ -230,7 +215,7 @@ iframe {
     transition: all 0.3s ease;
 }
 
-/* ===== MENÚ MÓVIL ===== */
+/* ===== MENU MOVIL ===== */
 
 .link-div {
     position: fixed;
@@ -248,7 +233,7 @@ iframe {
     transition: right 0.35s ease;
 }
 
-/* MENÚ ACTIVO */
+/* MENU ACTIVO */
 
 .link-div.active {
     right: 0;
@@ -286,7 +271,7 @@ iframe {
     transform: scale(1.15);
 }
 
-/* ===== ANIMACIÓN HAMBURGUESA ===== */
+/* ===== ANIMACION HAMBURGUESA ===== */
 
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
@@ -306,7 +291,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* ===== MEDIA QUERY HAMBURGUESA ===== */
 
 @media (min-width: 900px) {
     .menu-toggle {
@@ -343,8 +328,6 @@ footer {
     width: 100vw;;
 }
 
-/* ===== LINKS ===== */
-
 .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -364,8 +347,6 @@ footer {
     color: var(--orange);
     transform: translateY(-2px);
 }
-
-/* ===== SOCIAL MEDIA ===== */
 
 .social-media-links {
     display: flex;
@@ -394,9 +375,6 @@ footer {
     transform: scale(1.15);
 }
 
-
-/* ===== SEPARATOR ===== */
-
 .footer-separator {
     width: 80%;
     height: 1px;
@@ -409,44 +387,17 @@ footer {
     margin: 10px 0;
 }
 
-/* ===== TEXT ===== */
-
 .footer-text {
     font-size: 0.85em;
     opacity: 0.7;
     text-align: center;
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 900px) {
-
-    footer {
-        padding: 30px 15px 18px;
-    }
-
-    .footer-links {
-        gap: 14px;
-    }
-
-    .footer-link {
-        font-size: 0.95em;
-    }
-
-    .social-media,
-    .account-icon {
-        width: 30px;
-        height: 30px;
-    }
-}
-
 /* =====================================================
-   MOBILE FIXES (NO TOCA DESKTOP)
+                    RESPONSIVE DESIGN 
    ===================================================== */
 
-@media (max-width: 1025px) {
-
-    /* ===== MAIN ===== */
+@media (max-width: 1024px) {
 
     .body {
         background-image: url(MEDIA_EUM/fondoblur.png);
@@ -468,8 +419,6 @@ footer {
         margin-bottom: 25px;
     }
 
-    /* ===== CONTENEDORES ===== */
-
     .menu {
         flex-direction: column;
         gap: 24px;
@@ -488,15 +437,11 @@ footer {
         max-width: 100%;
     }
 
-    /* ===== TITULOS ===== */
-
     .characters-title,
     .lore-title,
     .preguntas-title {
         font-size: 1.6em;
     }
-
-    /* ===== TEXTO ===== */
 
     p,
     .lore {
@@ -504,15 +449,11 @@ footer {
         line-height: 1.55;
     }
 
-    /* ===== LISTAS ===== */
-
     .item1,
     .item2,
     .item3 {
         font-size: 1.25em;
     }
-
-    /* ===== FAQ ===== */
 
     summary {
         font-size: 1.2em;
@@ -522,8 +463,6 @@ footer {
         font-size: 1em;
     }
 
-    /* ===== VIDEO ===== */
-
     video,
     iframe {
         width: 95vw;
@@ -532,8 +471,6 @@ footer {
         border-radius: 20px;
     }
 
-    /* ===== BOTÓN ===== */
-
     .btn-comprar {
         width: 50vw;
         text-align: center;
@@ -541,21 +478,15 @@ footer {
         font-size: 80%;
     }
 
-    /* ===== NAV LINKS ===== */
-
     .nav-link {
         font-size: 1.25em;
     }
-
-    /* ===== ICONOS ===== */
 
     .social-media,
     .account-icon {
         width: 32px;
         height: 32px;
     }
-
-    /* ===== FOOTER ===== */
 
     footer {
         padding: 30px 16px 18px;
@@ -573,6 +504,7 @@ footer {
     .footer-text {
         font-size: 0.8em;
     }
+
 
 
 
@@ -595,6 +527,10 @@ footer {
         gap: 1.5rem;
     }
 
+    .mission-image-container {
+        order: -1;
+    }
+
     .developers {
         width: 100%;
     }
@@ -615,48 +551,9 @@ footer {
     .card {
         width: 80vw !important;
         height: 80vw !important;
-        margin: 0 !important;
-    }
-}
-
-/* ===== EXTRA: MÓVILES MUY PEQUEÑOS ===== */
-
-@media (max-width: 480px) {
-
-    .main h1 {
-        font-size: 2.2em;
+        margin-bottom: 10em;
     }
 
-    .logo {
-        width: 160px;
-    }
-
-    .characters-title,
-    .lore-title,
-    .preguntas-title {
-        font-size: 1.4em;
-    }
-
-    .about-hero {
-        height: 40vh;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    .about-hero h1 {
-        font-size: 1.8em;
-    }
-
-    .developers h2 {
-        font-size: 2.5em !important;
-        margin-bottom: 1.5rem;
-    }
-
-    .card {
-        width: 95vw !important;
-        height: 95vw !important;
-        margin: 1rem auto !important;
-    }
 }
 
 
@@ -717,7 +614,7 @@ footer {
     margin-bottom: 4rem;
 }
 
-/* Contenedores de imagen */
+
 .vision-image-container,
 .mission-image-container,
 .values-image-container {
@@ -736,7 +633,7 @@ footer {
     object-fit: contain;
 }
 
-/* Contenedores de texto */
+
 .vision-text-container,
 .mission-text-container,
 .values-text-container {
