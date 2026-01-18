@@ -577,20 +577,28 @@ footer {
 
 
     .about-hero {
+        background-size: cover;
         background-attachment: scroll;
-        background-repeat: no-repeat;
-        background-image: url('MEDIA_EUM/fondoblur.png');
-        background-size: auto;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        height: 60vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
+        height: 45vh;
+    }
 
+    .about-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .info-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .developers h2 {
+        font-size: 2em;
+    }
+
+    .card {
+        width: 80vw;
+        height: 30vh;
+        margin: 3vh auto;
     }
 }
 
@@ -610,6 +618,19 @@ footer {
     .lore-title,
     .preguntas-title {
         font-size: 1.4em;
+    }
+
+    .about-hero {
+        height: 40vh;
+    }
+
+    .about-hero h1 {
+        font-size: 1.8em;
+    }
+
+    .card {
+        width: 95vw;
+        height: 25vh;
     }
 }
 
@@ -675,29 +696,30 @@ footer {
 .vision-image-container,
 .mission-image-container,
 .values-image-container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     position: relative;
     justify-content: center;
+    max-width: 100%;
 }
 
 .vision-image,
 .mission-image,
 .values-image {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
+    object-fit: contain;
 }
 
 /* Contenedores de texto */
 .vision-text-container,
 .mission-text-container,
 .values-text-container {
-
     background: var(--purple-glass);
     border-radius: 30px;
-    padding: 2% 4%;
-
-    margin-top: 10vh;
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+    max-width: 95vw;
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(6px);
     position: relative;
