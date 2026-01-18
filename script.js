@@ -15,18 +15,3 @@ navLinks.forEach(link => {
   });
 });
 
-// Parallax effect para about-hero
-const aboutHero = document.querySelector('.about-hero');
-
-if (aboutHero) {
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.pageYOffset;
-    const element = aboutHero.getBoundingClientRect().top;
-    
-    // Solo aplicar parallax cuando el elemento está visible
-    if (element < window.innerHeight && element > -window.innerHeight) {
-      const parallaxOffset = scrollPosition * 0.5;
-      aboutHero.style.backgroundPosition = `center ${parallaxOffset * -0.3}px`;
-    }
-  });
-}
