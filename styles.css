@@ -510,8 +510,9 @@ footer {
 
     .about-hero {
         background-size: cover;
-        background-attachment: scroll;
-        height: 45vh;
+        background-attachment: fixed;
+        height: 40vh;
+        padding: 5em;
     }
 
     .about-hero h1 {
@@ -519,7 +520,7 @@ footer {
     }
     
     .about-hero p {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .info-section {
