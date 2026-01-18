@@ -578,10 +578,8 @@ footer {
 
     .about-hero {
         background-attachment: scroll;
-        padding-top: 100vh;
-        background-size: cover;
-        background-position: center;
         background-repeat: no-repeat;
+
     }
 }
 
