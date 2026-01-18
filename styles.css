@@ -577,8 +577,8 @@ footer {
 
 
     .about-hero {
-        background-size: auto;
-        background-attachment: scroll;
+        background-size: contain;
+        background-attachment: fixed;
     }
 }
 
