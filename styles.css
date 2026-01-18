@@ -578,7 +578,8 @@ footer {
 
     .about-hero {
         background-size: contain;
-        background-attachment: fixed;
+        background-attachment: scroll;
+        height: 50vh;
     }
 }
 
