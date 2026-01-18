@@ -535,8 +535,9 @@ footer {
     /* ===== BOTÓN ===== */
 
     .btn-comprar {
-        width: 35vw;
+        width: 50vw;
         text-align: center;
+
         font-size: 80%;
     }
 
@@ -572,6 +573,13 @@ footer {
     .footer-text {
         font-size: 0.8em;
     }
+
+
+
+    .about-hero {
+        background-size: cover;
+        background-attachment: scroll;
+    }
 }
 
 /* ===== EXTRA: MÓVILES MUY PEQUEÑOS ===== */
@@ -600,8 +608,11 @@ footer {
 
 
 .aboutus-body {
-    background-image: none;
-    background-color: #482F46; 
+    background-color: #482F46;
+}
+
+.aboutus-body::before {
+    display: none;
 }
 
 .about-hero {
@@ -617,6 +628,7 @@ footer {
     position: relative;
     overflow: hidden;
 }   
+
 
 .about-hero h1 {
     font-family: 'Minecraft', sans-serif;
