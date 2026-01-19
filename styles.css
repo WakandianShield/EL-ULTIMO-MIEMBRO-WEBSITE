@@ -507,11 +507,18 @@ footer {
 
 
 
-
     .about-hero {
-        background-attachment: scroll !important;
-        height: 40vh;
-        padding: 5em;
+        height: auto;
+        min-height: unset;
+        padding: 0;
+    }
+
+    .about-hero::before {
+        position: relative;
+        height: auto;
+        aspect-ratio: 16 / 16; /* AJUSTA si tu imagen es más alta */
+        background-size: contain; /* 🔥 AHORA SÍ */
+        background-attachment: scroll;
     }
 
     .about-hero h1 {
