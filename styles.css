@@ -507,19 +507,23 @@ footer {
 
 
 
+    
+
+    body::before {
+        display: none !important;
+    }
+
     .about-hero {
-        height: auto;
-        min-height: unset;
-        padding: 0;
+        height: 45vh;          /* AJUSTA a gusto */
+        min-height: 300px;
     }
 
     .about-hero::before {
-        position: relative;
-        height: auto;
-        aspect-ratio: 16 / 16; /* AJUSTA si tu imagen es más alta */
-        background-size: contain; /* 🔥 AHORA SÍ */
+        background-size: cover;      /* 🔥 mantiene proporción */
+        background-position: center; /* 🔥 recorte natural */
         background-attachment: scroll;
     }
+
 
     .about-hero h1 {
         font-size: 2em;
