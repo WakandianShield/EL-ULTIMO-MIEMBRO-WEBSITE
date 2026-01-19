@@ -508,13 +508,11 @@ footer {
 
 
     .about-hero {
-        background-attachment: scroll;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: auto;
-        min-height: 50vh;
-        padding: 6rem 1rem;
+        background-attachment: scroll; 
+        background-size: cover;      
+        background-position: center center;
+        min-height: 85vh;           
+        padding: 8rem 1.5rem;
     }
 
     .about-hero h1 {
