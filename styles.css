@@ -507,23 +507,12 @@ footer {
 
 
 
-    
-
-    body::before {
-        display: none !important;
-    }
 
     .about-hero {
-        height: 45vh;          /* AJUSTA a gusto */
-        min-height: 300px;
+        background-attachment: scroll !important;
+        height: 40vh;
+        padding: 5em;
     }
-
-    .about-hero::before {
-        background-size: cover;      /* 🔥 mantiene proporción */
-        background-position: center; /* 🔥 recorte natural */
-        background-attachment: scroll;
-    }
-
 
     .about-hero h1 {
         font-size: 2em;
@@ -582,31 +571,18 @@ footer {
 }
 
 .about-hero {
-    position: relative;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.about-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
     background-image: url('MEDIA_EUM/fondoblur.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    z-index: 0;
-}
-
-.about-hero > * {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    z-index: 1;
-}
-
+    overflow: hidden;
+}   
 
 
 .about-hero h1 {
