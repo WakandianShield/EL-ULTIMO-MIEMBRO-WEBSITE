@@ -556,8 +556,19 @@ footer {
 
     .form-div {
         width: 85vw !important;
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem !important;
+        overflow-y: auto; 
     }
+
+    .form-div h2 {
+        margin-top: 3rem !important;
+        font-size: 1.5em !important;
+    }
+
+    .form-btn {
+        margin: 2em auto !important;
+    }
+    
 }
 
 
@@ -758,32 +769,61 @@ h2 {
 
 
 
+
+
+
+
 .contact-body {
     display: flex;
     justify-content: center;  
     align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: var(--purple-glass)
 }
+
 
 .form-div {
-    width: 30vw;
-    height: 80vh;
-}
-
-.form-div form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    height: 70vh;
+    width: 25vw;
+    background: var(--purple-glass);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
+.form-tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-btn {
+    font-family: "Minecraft", sans-serif;
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-light);
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+/* INPUTS */
 .form_input {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 1em;
 }
 
 .form_input input {
-    padding: 12px 14px;
+    padding: 10px 14px;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.25);
     background: rgba(15, 23, 42, 0.75);
@@ -794,7 +834,7 @@ h2 {
 }
 
 .form_input input::placeholder {
-    color: rgba(197, 181, 219, 0.76);
+    color: rgba(193, 174, 223, 0.76);
 }
 
 /* Glow focus */
@@ -803,46 +843,99 @@ h2 {
     box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.35);
 }
 
-
-label {
+.form_input label {
     font-family: 'Minecraft', sans-serif;
     font-size: 0.85em;
     color: var(--gold);
+    padding-top: 1em;
 }
+
+.checkbox-container { 
+    display: inline-block; 
+    justify-items: center; 
+    margin-top: 1.2em; 
+    margin-bottom: 0.5;
+} 
 
 .checkbox {
-    accent-color: var(--orange);
-    transform: scale(1.15);
+    accent-color: var(--orange); 
+    transform: scale(1.15); 
+} 
+
+.checkbox-container label {
+    font-size: 0.84em;
 }
 
+.a-terms { 
+    color: #8c73cf; 
+    text-decoration: none; 
+}
+
+.a-terms:hover {
+    color: #594985;
+}
+
+
+/* TITULO */
 .form-div h2 {
     font-family: 'Minecraft', sans-serif;
     text-align: center;
     color: var(--gold);
     font-size: 2em;
+    margin-top: 1.5em;
     margin-bottom: 1.5rem;
     text-shadow: 4px 4px 6px rgb(206, 117, 0);
 }
 
-.a-terms {
-    color: #8c73cf;
+
+.form-btn {
+    font-family: sans-serif;
+    display: block;
+    width: 90%; 
+    margin: 1.5em auto;
+    padding: 0.7em 0;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--orange);
+    color: var(--text-light);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.form-btn:hover {
+    background-color: #ff9800cc;
+    transform: scale(1.05); 
 }
 
 
-input {
-    border-style: none;
-    background-color: transparent;
-    place-content: white;
-}
-
-
-
-.form-div.active {
-    opacity: 0;
-    transition: 1s;
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .form-div {
+    position: relative;
+}
+
+#register-form,
+#login-form {
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    padding: 0 3em;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#register-form {
     opacity: 1;
-    transition: 1s;
+    visibility: visible;
+}
+#login-form {
+    opacity: 0;
+    visibility: hidden;
 }
