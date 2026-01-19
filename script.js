@@ -9,6 +9,15 @@ const registerForm = document.getElementById("register-form");
 const loginForm = document.getElementById("login-form");
 
 
+// Seleccionamos todas las tarjetas
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const content = card.querySelector('.card__content');
+        content.classList.toggle('active'); // Muestra u oculta al click
+    });
+});
 
 
 
@@ -64,3 +73,7 @@ loginForm.addEventListener("submit", e => {
 });
 
 window.addEventListener("DOMContentLoaded", () => showForm("register"));
+
+
+
+
