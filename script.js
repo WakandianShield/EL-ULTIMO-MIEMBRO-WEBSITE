@@ -15,3 +15,12 @@ navLinks.forEach(link => {
   });
 });
 
+
+const logIn = document.querySelector(".form-div");
+const btn = document.querySelector(".logIn");
+
+btn.addEventListener("click", () => {
+  // aquí ES verdad que hubo un click
+  logIn.classList.toggle("active");
+});
+

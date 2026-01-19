@@ -76,7 +76,8 @@ body::before {
 
 .characters-div,
 .lore-div,
-.preguntas-div {
+.preguntas-div,
+.form-div {
     background: var(--purple-glass);
     border-radius: 30px;
     padding: 2% 4%;
@@ -88,7 +89,6 @@ body::before {
     max-width: 95vw;
     margin: auto;
 }
-
 
 .characters-title,
 .lore-title,
@@ -551,6 +551,13 @@ footer {
         margin-bottom: 10em;
     }
 
+
+
+
+    .form-div {
+        width: 85vw !important;
+        padding: 2rem 1.5rem;
+    }
 }
 
 
@@ -745,4 +752,97 @@ h2 {
   font-size: 14px;
   color: #777;
   line-height: 1.4;
+}
+
+
+
+
+
+.contact-body {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
+
+.form-div {
+    width: 30vw;
+    height: 80vh;
+}
+
+.form-div form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    opacity: 1;
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form_input input {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(15, 23, 42, 0.75);
+    color: var(--text-light);
+    font-size: 0.95em;
+    outline: none;
+    transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form_input input::placeholder {
+    color: rgba(197, 181, 219, 0.76);
+}
+
+/* Glow focus */
+.form_input input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.35);
+}
+
+
+label {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 0.85em;
+    color: var(--gold);
+}
+
+.checkbox {
+    accent-color: var(--orange);
+    transform: scale(1.15);
+}
+
+.form-div h2 {
+    font-family: 'Minecraft', sans-serif;
+    text-align: center;
+    color: var(--gold);
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 6px rgb(206, 117, 0);
+}
+
+.a-terms {
+    color: #8c73cf;
+}
+
+
+input {
+    border-style: none;
+    background-color: transparent;
+    place-content: white;
+}
+
+
+
+.form-div.active {
+    opacity: 0;
+    transition: 1s;
+}
+
+.form-div {
+    opacity: 1;
+    transition: 1s;
 }
