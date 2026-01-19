@@ -777,14 +777,16 @@ h2 {
     display: flex;
     justify-content: center;  
     align-items: center;
-    min-height: 100vh;
-    min-width: 100vw;
-    background: var(--purple-glass)
+    width: 100%;
+    padding: 0;
+    background: var(--purple-glass);
+    box-sizing: border-box;
+    flex-direction: column; 
 }
 
-
 .form-div {
-    height: 70vh;
+    margin: 12vh ;
+    height: 75vh;
     width: 25vw;
     background: var(--purple-glass);
     border-radius: 12px;
@@ -815,7 +817,6 @@ h2 {
     color: var(--orange);
 }
 
-/* INPUTS */
 .form_input {
     display: flex;
     flex-direction: column;
@@ -863,7 +864,7 @@ h2 {
 } 
 
 .checkbox-container label {
-    font-size: 0.84em;
+    font-size: 0.7em;
 }
 
 .a-terms { 
@@ -875,8 +876,6 @@ h2 {
     color: #594985;
 }
 
-
-/* TITULO */
 .form-div h2 {
     font-family: 'Minecraft', sans-serif;
     text-align: center;
@@ -886,7 +885,6 @@ h2 {
     margin-bottom: 1.5rem;
     text-shadow: 4px 4px 6px rgb(206, 117, 0);
 }
-
 
 .form-btn {
     font-family: sans-serif;
