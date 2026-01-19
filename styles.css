@@ -110,6 +110,10 @@ p,
     line-height: 1.6;
 }
 
+.characters-div p {
+    text-align: left;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -440,7 +444,8 @@ footer {
     }
 
     summary {
-        font-size: 1.2em;
+        font-size: 1em;
+        list-style: none;
     }
 
     details p {
