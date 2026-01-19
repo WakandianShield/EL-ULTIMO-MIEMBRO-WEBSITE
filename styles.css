@@ -507,12 +507,11 @@ footer {
 
 
 
+
     .about-hero {
-        background-attachment: scroll; 
-        background-size: cover;      
-        background-position: center center;
-        min-height: 85vh;           
-        padding: 8rem 1.5rem;
+        background-attachment: scroll !important;
+        height: 40vh;
+        padding: 5em;
     }
 
     .about-hero h1 {
@@ -572,18 +571,31 @@ footer {
 }
 
 .about-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: url('MEDIA_EUM/fondoblur.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 0;
+}
+
+.about-hero > * {
     position: relative;
-    overflow: hidden;
-}   
+    z-index: 1;
+}
+
 
 
 .about-hero h1 {
