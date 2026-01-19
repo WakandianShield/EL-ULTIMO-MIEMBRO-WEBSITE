@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -196,8 +200,6 @@ iframe {
     display: block;
 }
 
-/*BOTON DE HAMBURGUESA*/
-
 .menu-toggle {
     width: 34px;
     height: 26px;
@@ -215,39 +217,31 @@ iframe {
     transition: all 0.3s ease;
 }
 
-/* ===== MENU MOVIL ===== */
-
 .link-div {
     position: fixed;
     top: 70px;
     right: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(14px);
+    background: rgba(49, 28, 58, 0.897);
+    backdrop-filter: blur(100px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 22px;
+    gap: 30px;
     transition: right 0.35s ease;
 }
-
-/* MENU ACTIVO */
 
 .link-div.active {
     right: 0;
 }
-
-/* LINKS */
 
 .nav-link {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Minecraft', sans-serif;
     font-size: 1.4em;
-    padding-left: 5px;
-    padding-right: 5px;
     transition: color 0.25s ease, transform 0.2s ease;
 }
 
@@ -256,22 +250,10 @@ iframe {
     transform: scale(1.05);
 }
 
-/* ICONOS */
-
-.social-media {
-    width: 45px;
-    height: 45px;
-    margin-top: 5px;
-    object-fit: contain;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
-}
 
 .social-media:hover {
     transform: scale(1.15);
 }
-
-/* ===== ANIMACION HAMBURGUESA ===== */
 
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
@@ -285,15 +267,7 @@ iframe {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-/* ===== SCROLL ===== */
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* ===== MEDIA QUERY HAMBURGUESA ===== */
-
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .menu-toggle {
         display: none;
     }
@@ -301,15 +275,16 @@ html {
     .link-div {
         position: static;
         flex-direction: row;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
         height: auto;
         width: auto;
         background: none;
         backdrop-filter: none;
-        gap: 12px;
+        gap: 30px;
     }
 }
-
-/* ===== FOOTER ===== */
 
 footer {
     background: linear-gradient(
@@ -399,6 +374,15 @@ footer {
 
 @media (max-width: 1024px) {
 
+    .left-social-media {
+        margin-left: 0;
+    }
+
+    .right-social-media {
+        margin-right: 0;
+    }
+
+
     .body {
         background-image: url(MEDIA_EUM/fondoblur.png);
         background-size: cover;
@@ -474,7 +458,7 @@ footer {
     .btn-comprar {
         width: 50vw;
         text-align: center;
-        padding-top: 1em;
+        padding: 1em 0;
         font-size: 80%;
     }
 
@@ -524,11 +508,19 @@ footer {
 
     .info-section {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
+        margin: 2em 0;
     }
 
     .mission-image-container {
         order: -1;
+    }
+
+    .vision-image,
+    .mission-image,
+    .values-image {
+        width: 70vw;
+        height: 70vh;
     }
 
     .developers {
@@ -549,8 +541,8 @@ footer {
     }
 
     .card {
-        width: 80vw !important;
-        height: 80vw !important;
+        width: 50vw !important;
+        height: 50vw !important;
         margin-bottom: 10em;
     }
 
