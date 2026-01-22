@@ -209,3 +209,4 @@ app.listen(PORT, () => {
     console.log('Presiona Ctrl+C para detener el servidor\n');
     crearTablaUsuarios();
 });
+
