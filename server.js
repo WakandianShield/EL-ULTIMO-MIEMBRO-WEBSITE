@@ -23,6 +23,13 @@ app.use(cors({
 app.use(bodyParser.json());                        // LEE DATOS EN FORMATO JSON
 app.use(bodyParser.urlencoded({ extended: true })); // LEE DATOS DE FORMS
 
+// MIDDLEWARE DE LOGGING
+app.use((req, res, next) => {
+    console.log(`\n📌 ${req.method} ${req.path}`);
+    console.log('Headers:', req.headers);
+    next();
+});
+
 // CONEXION BASE DE DATOS
 
 const pool = mysql.createPool({
@@ -73,6 +80,7 @@ async function crearTablaUsuarios() {
 
 // RUTA DE PRUEBA 
 app.get('/api/health', (req, res) => {
+    console.log('📍 GET /api/health - Recibido');
     res.status(200).json({ 
         success: true, 
         message: 'SERVIDOR FUNCIONANDO CORRECTAMENTE',
@@ -83,6 +91,7 @@ app.get('/api/health', (req, res) => {
 // RUTA DE REGISTRO
 
 app.post('/api/register', async (req, res) => {
+    console.log('📍 POST /api/register - Recibido:', req.body);
     try {
         // OBTENER DATOS DEL FORMULARIO DE REGISTRO
         const { nombre, email, contraseña } = req.body;
@@ -145,10 +154,10 @@ app.post('/api/register', async (req, res) => {
         });
     }
 });
-
 // RUTA DE LOGIN
 
 app.post('/api/login', async (req, res) => {
+    console.log('📍 POST /api/login - Recibido:', req.body);
     try {
         // OBTENER DATOS DEL FORMULARIO DE LOGIN
         const { email, contraseña } = req.body;
