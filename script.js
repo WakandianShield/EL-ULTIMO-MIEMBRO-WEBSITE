@@ -70,3 +70,46 @@ cards.forEach(card => {
 
 
 
+
+
+
+
+
+
+
+// REGISTRO DE USUARIO
+const registerFormEl = document.getElementById('register-form');
+
+if (registerFormEl) {
+  registerFormEl.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(
+      new FormData(registerFormEl)
+    );
+
+    try {
+      const res = await fetch(`${API}/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        alert('Registro enviado correctamente');
+        registerFormEl.reset();
+      } else {
+        alert('Error al enviar el registro');
+      }
+    } catch (err) {
+      alert('No se pudo conectar con el servidor');
+      console.error(err);
+    }
+  });
+}
+
+
+
+
+
+
