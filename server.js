@@ -197,15 +197,15 @@ app.post('/api/login', async (req, res) => {
         console.error('ERROR EN LOGIN:', error);
         res.status(500).json({ 
             success: false, 
-            message: 'EERROR AL INICIAR SESION. INTENTA DE NUEVO.' 
+            message: 'ERROR AL INICIAR SESION. INTENTA DE NUEVO.' 
         });
     }
 });
 
 // INICIAR EL SERVIDOR
 
-app.listen(PORT, () => {
-    console.log(`\nServidor ejecutándose en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`\nServidor ejecutándose en puerto ${PORT}`);
     console.log('Presiona Ctrl+C para detener el servidor\n');
     crearTablaUsuarios();
 });
