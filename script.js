@@ -11,8 +11,12 @@ const loginForm = document.getElementById("login-form");
 
 const cards = document.querySelectorAll('.card');
 
-// URL DEL SERVIDOR EN RAILWAY
-const API_URL = 'https://el-ultimo-miembro-website.railway.app/api';
+// URL DEL SERVIDOR - Detectar si es local o producción
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? `http://localhost:3000/api`
+    : 'https://el-ultimo-miembro-website.railway.app/api';
+
+console.log('📍 API_URL:', API_URL);
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
