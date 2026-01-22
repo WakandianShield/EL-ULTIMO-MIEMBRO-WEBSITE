@@ -30,6 +30,14 @@ app.use((req, res, next) => {
     next();
 });
 
+// MANEJAR PREFLIGHT REQUESTS (OPTIONS)
+app.options('*', cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: false
+}));
+
 // CONEXION BASE DE DATOS
 
 const pool = mysql.createPool({
