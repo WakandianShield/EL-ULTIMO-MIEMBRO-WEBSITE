@@ -11,7 +11,8 @@ const loginForm = document.getElementById("login-form");
 
 const cards = document.querySelectorAll('.card');
 
-
+// URL DEL SERVIDOR EN RAILWAY
+const API_URL = 'https://el-ultimo-miembro-website.railway.app/api';
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -54,14 +55,79 @@ function showForm(formToShow) {
 registerTab.addEventListener("click", () => showForm("register"));
 loginTab.addEventListener("click", () => showForm("login"));
 
-registerForm.addEventListener("submit", e => {
+// REGISTRO 
+registerForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    alert("Registro enviado!");
+    
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const contraseña = document.getElementById("contraseña").value;
+    
+    console.log("ENVIADO REGISTRO:", { nombre, email });
+
+    try {
+        // ENVIAR DATOS AL SERVIDOR
+        const response = await fetch(`${API_URL}/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ nombre, email, contraseña })
+        });
+
+        // LEER RESPUESTA DEL SERVIDOR
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            registerForm.reset();
+            // CAMBIAR A LOGIN DESPUES DE REGISTRO EXITOSO
+            setTimeout(() => showForm("login"), 1500);
+        } else {
+            alert("ERROR: " + data.message);
+        }
+    } catch (error) {
+        console.error('ERROR:', error);
+        alert("ERROR AL CONECTAR CON EL SERVIDOR, SI ESTA CORRIENDO?");
+    }
 });
 
-loginForm.addEventListener("submit", e => {
+// LOGIN
+loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    alert("Login enviado!");
+    
+    // OBTENER DATOS DEL LOGIN
+    const email = document.getElementById("login-email").value;
+    const contraseña = document.getElementById("login-contraseña").value;
+    
+    console.log("Enviando login:", { email });
+
+    try {
+        // ENVIAR DATOS AL SERVIDOR
+        const response = await fetch(`${API_URL}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, contraseña })
+        });
+
+        // LEER RESPUESTA DEL SERVIDOR
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            // GUARDAR INFO DEL USUARIO EN EL ALMACENAMIENTO LOCAL
+            localStorage.setItem('usuario', JSON.stringify(data.usuario));
+            loginForm.reset();
+            console.log("Usuario autenticado:", data.usuario);
+        } else {
+            alert("ERROR: " + data.message);
+        }
+    } catch (error) {
+        console.error('ERROR:', error);
+        alert("ERROR AL CONECTAR CON EL SERVIDOR, SI ESTA CORRIENDO?");
+    }
 });
 
 window.addEventListener("DOMContentLoaded", () => showForm("register"));
