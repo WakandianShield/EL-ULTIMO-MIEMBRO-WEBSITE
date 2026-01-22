@@ -15,7 +15,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // PROCESADORES DE DATOS
-app.use(cors());                                    // PERMITE QUE HTML SE COMUNIQUE CON EL SERVIDOR
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+}));
 app.use(bodyParser.json());                        // LEE DATOS EN FORMATO JSON
 app.use(bodyParser.urlencoded({ extended: true })); // LEE DATOS DE FORMS
 app.use(express.static(path.join(__dirname)));     // SIRVE ARCHIVOS HTML, CSS, JS
@@ -67,6 +71,15 @@ async function crearTablaUsuarios() {
         console.error('ERROR AL CREAR TABLA:', error);
     }
 }
+
+// RUTA DE PRUEBA 
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ 
+        success: true, 
+        message: 'SERVIDOR FUNCIONANDO CORRECTAMENTE',
+        timestamp: new Date()
+    });
+});
 
 // RUTA DE REGISTRO
 
