@@ -12,6 +12,11 @@ const loginForm = document.getElementById("login-form");
 const cards = document.querySelectorAll('.card');
 
 
+// API PARA EL SERVIDOR DE RAILWAY
+const API = 'https://el-ultimo-miembro-website-backend-production.up.railway.app';
+
+
+
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   nav.classList.toggle("active");
