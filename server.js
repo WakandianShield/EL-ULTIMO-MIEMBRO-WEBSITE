@@ -2,7 +2,6 @@
 // IMPORTAR LAS LIBRERIAS
 
 const express = require('express');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
@@ -18,35 +17,37 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// CORS HEADERS MANUALMENTE
+// CORS - Permitir TODOS los orígenes
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Max-Age', '3600');
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
     
+    // Responder inmediatamente a OPTIONS
     if (req.method === 'OPTIONS') {
-        res.sendStatus(200);
-    } else {
-        next();
+        return res.status(200).end();
     }
+    
+    next();
 });
 
 // MIDDLEWARE DE LOGGING
 app.use((req, res, next) => {
     console.log(`\n📌 ${req.method} ${req.path}`);
-    console.log('Body:', req.body);
+    if (req.body && Object.keys(req.body).length > 0) {
+        console.log('Body:', req.body);
+    }
     next();
 });
 
 // CONEXION BASE DE DATOS
 
 const pool = mysql.createPool({
-    host: 'tramway.proxy.rlwy.net',
+    host: 'caboose.proxy.rlwy.net',
     user: 'root',
-    password: 'VNbFaVZBzPUesLABCjWKcSoRrEuuzBVU',
+    password: 'qIIABAoYMqMlskVIvweTndtcJsGrNufE',
     database: 'railway',
-    port: 31542,
+    port: 28548,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
