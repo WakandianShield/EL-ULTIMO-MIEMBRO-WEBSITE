@@ -22,7 +22,6 @@ app.use(cors({
 }));
 app.use(bodyParser.json());                        // LEE DATOS EN FORMATO JSON
 app.use(bodyParser.urlencoded({ extended: true })); // LEE DATOS DE FORMS
-app.use(express.static(path.join(__dirname)));     // SIRVE ARCHIVOS HTML, CSS, JS
 
 // CONEXION BASE DE DATOS
 
@@ -214,6 +213,9 @@ app.post('/api/login', async (req, res) => {
         });
     }
 });
+
+// SERVIR ARCHIVOS ESTÁTICOS (DESPUÉS de las rutas de API)
+app.use(express.static(path.join(__dirname)));
 
 // INICIAR EL SERVIDOR
 
