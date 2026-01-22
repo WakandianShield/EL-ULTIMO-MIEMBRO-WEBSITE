@@ -15,28 +15,29 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // PROCESADORES DE DATOS
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type']
-}));
-app.use(bodyParser.json());                        // LEE DATOS EN FORMATO JSON
-app.use(bodyParser.urlencoded({ extended: true })); // LEE DATOS DE FORMS
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// CORS HEADERS MANUALMENTE
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Max-Age', '3600');
+    
+    if (req.method === 'OPTIONS') {
+        res.sendStatus(200);
+    } else {
+        next();
+    }
+});
 
 // MIDDLEWARE DE LOGGING
 app.use((req, res, next) => {
     console.log(`\n📌 ${req.method} ${req.path}`);
-    console.log('Headers:', req.headers);
+    console.log('Body:', req.body);
     next();
 });
-
-// MANEJAR PREFLIGHT REQUESTS (OPTIONS)
-app.options('*', cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: false
-}));
 
 // CONEXION BASE DE DATOS
 
