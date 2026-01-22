@@ -67,6 +67,8 @@ registerForm.addEventListener("submit", async (e) => {
 
     try {
         // ENVIAR DATOS AL SERVIDOR
+        console.log("ENVIANDO A:", `${API_URL}/register`);
+        
         const response = await fetch(`${API_URL}/register`, {
             method: 'POST',
             headers: {
@@ -75,8 +77,12 @@ registerForm.addEventListener("submit", async (e) => {
             body: JSON.stringify({ nombre, email, contraseña })
         });
 
+        console.log("RESPUESTA:", response.status);
+        
         // LEER RESPUESTA DEL SERVIDOR
         const data = await response.json();
+        
+        console.log("✓ Datos recibidos:", data);
 
         if (data.success) {
             alert(data.message);
@@ -104,6 +110,8 @@ loginForm.addEventListener("submit", async (e) => {
 
     try {
         // ENVIAR DATOS AL SERVIDOR
+        console.log("ENVIANDO LOGIN A:", `${API_URL}/login`);
+        
         const response = await fetch(`${API_URL}/login`, {
             method: 'POST',
             headers: {
@@ -112,8 +120,12 @@ loginForm.addEventListener("submit", async (e) => {
             body: JSON.stringify({ email, contraseña })
         });
 
+        console.log("RESPUESTA:", response.status);
+        
         // LEER RESPUESTA DEL SERVIDOR
         const data = await response.json();
+        
+        console.log("DATOS RECIBIDOS:", data);
 
         if (data.success) {
             alert(data.message);
