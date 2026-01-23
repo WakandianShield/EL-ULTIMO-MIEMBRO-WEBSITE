@@ -975,3 +975,43 @@ h2 {
     opacity: 0;
     visibility: hidden;
 }
+
+
+
+
+.form-div textarea {
+    margin-top: 2em;
+    resize:none;
+
+    min-height: 20em;
+    max-height: 70%;
+
+
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(15, 23, 42, 0.75);
+    color: var(--text-light);
+    font-size: 0.95em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+    transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-div textarea::placeholder {
+    color: rgba(193, 174, 223, 0.76);
+}
+
+.form-div textarea:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.35);
+}
+
+
+.user-account {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 1em;
+    color: var(--gold);
+    text-align: center;
+}
+

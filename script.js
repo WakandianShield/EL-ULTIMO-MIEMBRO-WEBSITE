@@ -127,15 +127,40 @@ if (loginFormEl) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      if (res.ok) {
-        alert('Inicio de sesión exitoso');
+
+    if (res.ok) {
+        const result = await res.json();
+        const nombreUsuario = result.user.usuario;
+
+        sessionStorage.setItem('nombreUsuario', nombreUsuario);
+
+        alert(`¡Bienvenido, ${nombreUsuario}!`);
         loginFormEl.reset();
-      } else {
-        alert('Error en el inicio de sesión');
-      }
+
+        window.location.href = 'messages.html'; 
+    } else {
+        const errorData = await res.json();
+        alert(errorData.error || 'Error en el inicio de sesión');
+    }
+
+
+
     } catch (err) {
       alert('No se pudo conectar con el servidor');
       console.error(err);
     }
   });
 }
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const label = document.getElementById('user-account');
+    const nombreUsuario = sessionStorage.getItem('nombreUsuario'); // obtener usuario
+
+    if (nombreUsuario) {
+        label.textContent = nombreUsuario; // actualizar label
+    }
+});
