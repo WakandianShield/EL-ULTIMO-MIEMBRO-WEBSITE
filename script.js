@@ -113,8 +113,29 @@ if (registerFormEl) {
   });
 }
 
-
-
-
-
-
+// INICIO DE SESIÓN DE USUARIO
+const loginFormEl = document.getElementById('login-form');
+if (loginFormEl) {
+  loginFormEl.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(
+      new FormData(loginFormEl)
+    );
+    try {
+      const res = await fetch(`${API}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        alert('Inicio de sesión exitoso');
+        loginFormEl.reset();
+      } else {
+        alert('Error en el inicio de sesión');
+      }
+    } catch (err) {
+      alert('No se pudo conectar con el servidor');
+      console.error(err);
+    }
+  });
+}
