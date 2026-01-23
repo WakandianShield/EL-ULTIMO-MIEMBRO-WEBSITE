@@ -134,10 +134,7 @@ if (loginFormEl) {
 
         sessionStorage.setItem('nombreUsuario', nombreUsuario);
 
-        const label = document.getElementById('user-account');
-        if (label) {
-            label.textContent = nombreUsuario;
-        }
+        document.getElementById("userText").textContent = nombreUsuario;
 
         alert(`¡Bienvenido, ${nombreUsuario}!`);
         loginFormEl.reset();
