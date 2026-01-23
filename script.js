@@ -134,11 +134,16 @@ if (loginFormEl) {
 
         sessionStorage.setItem('nombreUsuario', nombreUsuario);
 
+        const label = document.getElementById('user-account');
+        if (label) {
+            label.textContent = nombreUsuario;
+        }
+
         alert(`¡Bienvenido, ${nombreUsuario}!`);
         loginFormEl.reset();
-
-        window.location.href = 'messages.html'; 
-    } else {
+    }
+    
+    else {
         const errorData = await res.json();
         alert(errorData.error || 'Error en el inicio de sesión');
     }
@@ -152,15 +157,3 @@ if (loginFormEl) {
   });
 }
 
-
-
-
-
-window.addEventListener('DOMContentLoaded', () => {
-    const label = document.getElementById('user-account');
-    const nombreUsuario = sessionStorage.getItem('nombreUsuario'); // obtener usuario
-
-    if (nombreUsuario) {
-        label.textContent = nombreUsuario; // actualizar label
-    }
-});
