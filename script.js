@@ -134,11 +134,12 @@ if (loginFormEl) {
 
         sessionStorage.setItem('nombreUsuario', nombreUsuario);
 
-        document.getElementById("userText").textContent = nombreUsuario;
-
         alert(`¡Bienvenido, ${nombreUsuario}!`);
         loginFormEl.reset();
-    }
+
+        window.location.href = 'messages.html'; 
+        getNombreUsuario();
+    } 
     
     else {
         const errorData = await res.json();
@@ -152,5 +153,15 @@ if (loginFormEl) {
       console.error(err);
     }
   });
+}
+
+
+function getNombreUsuario() {
+    const nombreUsuario = sessionStorage.getItem('nombreUsuario');
+    if (nombreUsuario) {
+        const userTextEl = document.getElementById('userText');
+        userTextEl.textContent = nombreUsuario;
+
+    }
 }
 
