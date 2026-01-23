@@ -1006,12 +1006,3 @@ h2 {
     border-color: var(--orange);
     box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.35);
 }
-
-
-.user-account {
-    font-family: 'Minecraft', sans-serif;
-    font-size: 1em;
-    color: var(--gold);
-    text-align: center;
-}
-
